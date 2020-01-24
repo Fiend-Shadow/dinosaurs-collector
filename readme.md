@@ -15,30 +15,30 @@ Bonus ( Based on score limits ) .
 ### `Data Structure:`
 
 ### `Task:`
-main-buildDom
-main- buildSplashScreen
-main- buildGameScreen
-main- eventListener
-main- buildGameOverScreen
-Game - buildCanvas
-Game - clearCanvas
-Game - updateCanvas
-Game - drawCanvas
-Game - setGameOver
-Game - collision
-Game - addEventListener
-player- jump
-player- handleScreenCollision
-player- didCollideDinosaurs
-player- didCollideBricks
-player- draw
-player- score
-dinosaurs- insideScreen
-dinosaurs- draw
-dinosaurs- updatePosition
-bricks- draw
-bricks- updatePostion
-bricks- insideScreen
+- main-buildDom
+- main- buildSplashScreen
+- main- buildGameScreen
+- main- eventListener
+- main- buildGameOverScreen
+- Game - buildCanvas
+- Game - clearCanvas
+- Game - updateCanvas
+- Game - drawCanvas
+- Game - setGameOver
+- Game - collision
+- Game - addEventListener
+- player- jump
+- player- handleScreenCollision
+- player- didCollideDinosaurs
+- player- didCollideBricks
+- player- draw
+- player- score
+- dinosaurs- insideScreen
+- dinosaurs- draw
+- dinosaurs- updatePosition
+- bricks- draw
+- bricks- updatePostion
+- bricks- insideScreen
 
 ### `Links:`
 
