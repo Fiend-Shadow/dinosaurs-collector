@@ -20,13 +20,15 @@ Bonus ( Based on score limits ) .
 - main- buildGameScreen
 - main- eventListener
 - main- buildGameOverScreen
-- Game - buildCanvas
-- Game - clearCanvas
-- Game - updateCanvas
-- Game - drawCanvas
-- Game - setGameOver
-- Game - collision
-- Game - addEventListener
+- main- removeSplashScreen
+- Game- buildCanvas
+- Game- clearCanvas
+- Game- updateCanvas
+- Game- drawCanvas
+- Game- setGameOver
+- Game- collision
+- Game- addEventListener
+- Game- startLoop
 - player- jump
 - player- handleScreenCollision
 - player- didCollideDinosaurs
