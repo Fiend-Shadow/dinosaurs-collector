@@ -10,7 +10,7 @@ function Game(){
     
 }
 Game.prototype.start = function () {
-        this.canvasContainer = document.querySelector(".convas-containers");
+        this.canvasContainer = document.querySelector(".canvas-container");
         this.canvas = this.gameScreen.querySelector("canvas");
         this.ctx = this.canvas.getContext("2d");
 
@@ -29,8 +29,8 @@ Game.prototype.start = function () {
 
         this.handleKeyDown = function (event) {
 
-            if (event.key === "Space"){
-                this.player.jump();
+            if (event.key === "ArrowUp"){
+                this.player.jump(true);
             }
         }
         document.body.addEventListener("keydown", this.handleKeyDown.bind(this));
@@ -41,7 +41,40 @@ Game.prototype.start = function () {
 
 }
 
-Game.prototype.startLoop = function () {}
+Game.prototype.startLoop = function () {
+    var loop = function (){
+        if (Math.random()>0.98){
+            var randomY = this.canvas.height * Math.random();
+            var newDinosaurs = new Dinosaurs (this.canvas, randomY);
+            this.dinosaurs.push(newDinosaurs);
+        }
+        
+        this.collisions();
+
+        this.dinosaurs = this.dinosaurs.filter (function (dinosaur){
+            dinosaur.updatePostion();
+            return dinosaur.insideScreen();
+        });
+
+        this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+
+        this.player.draw();
+
+        this.dinosaurs.forEach(function(dinos){
+            dinos.draw();
+        });
+
+
+
+
+        if (!this.gameIsOver){
+            window.requestAnimationFrame(loop);
+        }
+    }.bind(this);
+
+
+    window.requestAnimationFrame(loop);
+}
 
 Game.prototype.collisions = function () {}
 

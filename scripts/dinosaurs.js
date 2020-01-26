@@ -1,6 +1,6 @@
 'use strict'
 
-function Dinosaurs(canvas , y, speed){
+function Dinosaurs(canvas , y){
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
     this.size = 30;
