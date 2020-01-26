@@ -4,7 +4,7 @@ function Player(canvas){
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
   this.score = 0;
-  this.size = 80;
+  this.size = 50;
   this.x = 50;
   this.y = canvas.height-50;
 
@@ -38,4 +38,18 @@ Player.prototype.draw = function () {
 }
 
 Player.prototype.jump = function () {
+    if (this.y ===this.canvas.height-50){
+        for (let i =0; i <=60;i++){
+            if(this.y< this.canvas.height-80){
+            this.y -=5;
+            }
+        
+            else if (this.y>0){
+                this.y +=5;
+            } 
+            else if (this.y === 0){
+            this.y =this.canvas.height-50
+        }
+    }
+  }
 }

@@ -23,10 +23,10 @@ Game.prototype.start = function () {
         this.canvas.setAttribute("height",this.containerHeight);
 
 
-        this.player = {};
+        //this.player = {};
         this.player = new Player(this.canvas);
 
-        
+
         this.handleKeyDown = function (event) {
 
             if (event.key === "Space"){
