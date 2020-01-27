@@ -30,9 +30,10 @@ Game.prototype.start = function () {
         this.handleKeyDown = function (event) {
 
             if (event.key === "ArrowUp"){
-                this.player.jump(true);
+                this.player.move();
+                }
             }
-        }
+        
         document.body.addEventListener("keydown", this.handleKeyDown.bind(this));
         
         

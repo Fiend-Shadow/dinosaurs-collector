@@ -7,7 +7,8 @@ function Player(canvas){
   this.size = 50;
   this.x = 50;
   this.y = canvas.height-50;
-
+  this.vy = -5;
+  this.speed = 2;
 
 }
 
@@ -15,13 +16,13 @@ Player.prototype.didCollideDinosaurs = function (dinosaurs) {}
 
 Player.prototype.didCollideBricks = function (brick) {}
 
-Player.prototype.handleScreenCollisions = function () {}
 
-Player.prototype.score = function () {
-    if (score === "up"){
+
+Player.prototype.score = function (sc) {
+    if (sc === "up"){
         score++ ;
     }
-    else if (score === "down"){
+    else if (sc === "down"){
         score-- ;
     }
 }
@@ -35,21 +36,10 @@ Player.prototype.draw = function () {
         this.size,
         this.size
     );
+    
 }
 
-Player.prototype.jump = function () {
-    if (this.y ===this.canvas.height-50){
-        for (let i =0; i <=60;i++){
-            if(this.y< this.canvas.height-80){
-            this.y -=5;
-            }
-        
-            else if (this.y>0){
-                this.y +=5;
-            } 
-            else if (this.y === 0){
-            this.y =this.canvas.height-50
-        }
-    }
-  }
+
+Player.prototype.move = function () {
+    this.y += this.vy ;
 }
