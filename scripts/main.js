@@ -3,7 +3,7 @@
 function buildDom(htmlString){
     var div=document.createElement('div');
     div.innerHTML=htmlString;
-    return div.children[0];
+    return div;
 }
 
 function main(){
@@ -15,15 +15,44 @@ function main(){
 
     function buildSplashScreen () {
         splashScreen = buildDom(`
-        <main>
-            <h1> dinosaurs collector</h1>
-            <button>start</button>
-        </main>    
+        <nav>
+        <ul id="nav_bar">
+          <li class="nav-links" id="gmail"><a href="#">Gmail</a></li>
+          <li class="nav-links"><a href="#">Images</a></li>
+          <li id="sign_in"><a href="#">Sign In</a></li>
+        </ul>  
+      </nav>  
+        <div class="google">
+        <a href="#" id="google_logo"><img src="/images/1280px-Google_2015_logo.svg.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
+      </div>
+      <div class="form">  
+        <form>
+          <label for="form-search"></label>
+          <input type="text" id="form-search" placeholder="Search Google or type URL">
+        </form>
+      </div>  
+      <div class= "buttons">  
+      <button type="button" id = "google">Google search</button>
+      <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky">
+    </div>
+    <footer>
+        <ul class="footer-left">
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">About</a></li> 
+        </ul>
+        <ul class="footer-right">    
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>       
+    </footer>  
+        
         `);
 
         document.body.appendChild(splashScreen);
 
-        var startButton = splashScreen.querySelector('button');
+        var startButton = splashScreen.querySelector('.buttons #google');
 
         startButton.addEventListener("click", startGame);
         
@@ -59,11 +88,39 @@ function main(){
     
     function createGameOverScreen () {
         gameOverScreen = buildDom(`
-        <main>
-            <h1>Game Over</h1>
-            <p>Yout score : <span></span></p>
-            <button>Restart</button>
-        </main>`);
+        <nav>
+        <ul id="nav_bar">
+          <li class="nav-links" id="gmail"><a href="#">Gmail</a></li>
+          <li class="nav-links"><a href="#">Images</a></li>
+          <li id="sign_in"><a href="#">Sign In</a></li>
+        </ul>  
+      </nav>  
+        <div class="google">
+        <a href="#" id="google_logo"><h1>Your score is <span calss="sco"></span></h1></a>
+      </div>
+      <div class="form">  
+        <form>
+          <label for="form-search"></label>
+          <input type="text" id="form-search" placeholder="Search Google or type URL">
+        </form>
+      </div>  
+      <div class= "buttons">  
+      <button type="button" id = "google">Restar !? </button>
+      <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky">
+    </div>
+    <footer>
+        <ul class="footer-left">
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">About</a></li> 
+        </ul>
+        <ul class="footer-right">    
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>       
+    </footer> 
+        `);
 
         var button = gameOverScreen.querySelector("button");
         button.addEventListener("click", startGame);

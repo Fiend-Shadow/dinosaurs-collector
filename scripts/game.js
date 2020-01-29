@@ -50,9 +50,11 @@ Game.prototype.start = function () {
 Game.prototype.startLoop = function () {
     var loop = function (){
         if (Math.random()>0.99){
-            var randomY = (this.canvas.height-40) * Math.random();
+            
+            var randomY = (this.canvas.height-70) * Math.random();
             var newDinosaurs = new Dinosaurs (this.canvas, randomY);
             this.dinosaurs.push(newDinosaurs);
+            
         }
         if (Math.random()>0.99){
             Math.random();
@@ -107,6 +109,7 @@ Game.prototype.collisions = function () {
         
         this.score ++;
          
+        element.x = 0 - element.size;
         }
         // else if (!this.player1.didCollideDinosaurs(element)){
         //   this.score --;
@@ -117,6 +120,7 @@ Game.prototype.collisions = function () {
         this.brick.forEach(function(element){
             if (this.player1.didCollideBricks(element)){
             
+                
             this.gameOver();
         }
     }.bind(this));

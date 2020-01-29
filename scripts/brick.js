@@ -7,16 +7,20 @@ function Bricks(canvas){
     this.x = this.canvas.width + this.size;
     this.y = this.canvas.height - 50;
     this.speed = 5;
+    this.imgBrick;
 }
 
 Bricks.prototype.draw = function () {
-    this.ctx.fillStyle = "blue";
-    this.ctx.fillRect(
-        this.x,
-        this.y,
-        this.size,
-        this.size,
-    );
+    // this.ctx.fillStyle = "blue";
+    // this.ctx.fillRect(
+    //     this.x,
+    //     this.y,
+    //     this.size,
+    //     this.size,
+    // );
+    this.imgBrick = new Image();
+    this.imgBrick.src = "/images/four-brown-bricks-png-clip-art.png";
+    this.ctx.drawImage(this.imgBrick,this.x,this.y,this.size,this.size);
 }
 
 Bricks.prototype.updatePostion = function () {

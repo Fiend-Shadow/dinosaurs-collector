@@ -8,7 +8,8 @@ function Player(canvas){
   this.x = 50;
   this.y = this.canvas.height-70;
   this.vy = null;
-  this.speed = 0.5;
+  this.speed = 0.7;
+  this.imgPlayer;
 
 }
 
@@ -60,25 +61,31 @@ Player.prototype.didCollideBricks = function (brick) {
 
 
 Player.prototype.draw = function () {
-    this.ctx.fillStyle = "red";
+    // this.ctx.fillStyle = "red";
     
-    this.ctx.fillRect(
-        this.x,
-        this.y,
-        this.size,
-        this.size
-        );
+    // this.ctx.fillRect(
+    //     this.x,
+    //     this.y,
+    //     this.size,
+    //     this.size
+    //     );
         
+    this.imgPlayer = new Image();
+    this.imgPlayer.src = "/images/google-logo.png";
+    this.ctx.drawImage(this.imgPlayer,this.x,this.y,this.size,this.size);
     }
     
     Player.prototype.jump = function (){
         this.y = this.y +this.vy *this.speed;
-        if (this.y < this.canvas.height -200){
-            this.vy = 5 ;
-        }
-        else if (this.y+this.size > this.canvas.height-20){
-            this.vy =0;
-        }
+        
+            
+            if (this.y < this.canvas.height -170){
+                this.vy = 5 ;
+            }
+            else if (this.y+this.size > this.canvas.height-20){
+                this.vy =0;
+            }
+    
         
     }
     
