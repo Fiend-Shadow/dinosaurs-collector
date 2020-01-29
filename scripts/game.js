@@ -51,7 +51,7 @@ Game.prototype.startLoop = function () {
     var loop = function (){
         if (Math.random()>0.99){
             
-            var randomY = (this.canvas.height-70) * Math.random();
+            var randomY = ((this.canvas.height-150) * Math.random())+100;
             var newDinosaurs = new Dinosaurs (this.canvas, randomY);
             this.dinosaurs.push(newDinosaurs);
             

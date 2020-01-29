@@ -101,7 +101,7 @@ function main(){
       <div class="form">  
         <form>
           <label for="form-search"></label>
-          <input type="text" id="form-search" placeholder="Search Google or type URL">
+          <input type="text" id="form-search" placeholder="Good Luck next time">
         </form>
       </div>  
       <div class= "buttons">  
