@@ -23,7 +23,7 @@ function main(){
         </ul>  
       </nav>  
         <div class="google">
-        <a href="#" id="google_logo"><img src="/images/1280px-Google_2015_logo.svg.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
+        <a href="#" id="google_logo"><img src="./images/1280px-Google_2015_logo.svg.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
       </div>
       <div class="form">  
         <form>
