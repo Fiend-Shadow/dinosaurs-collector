@@ -28,11 +28,11 @@ function main(){
       <div class="form">  
         <form>
           <label for="form-search"></label>
-          <input type="text" id="form-search" placeholder="Search Google or type URL">
+          <input type="text" id="form-search" placeholder="Press START!">
         </form>
       </div>  
       <div class= "buttons">  
-      <button type="button" id = "google">Google search</button>
+      <button type="button" id = "google">Start!</button>
       <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky">
     </div>
     <footer>
