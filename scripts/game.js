@@ -104,11 +104,12 @@ Game.prototype.startLoop = function () {
 
 Game.prototype.collisions = function () {
 
+    
     this.dinosaurs.forEach(function(element){
         if (this.player1.didCollideDinosaurs(element)){
         
         this.score ++;
-         
+         this.scoreElement.innerHTML = this.score;
         element.x = 0 - element.size;
         }
         // else if (!this.player1.didCollideDinosaurs(element)){

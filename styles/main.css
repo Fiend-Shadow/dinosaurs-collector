@@ -1,6 +1,6 @@
 .canvas-container{
     height: 275px;
-    
+    border : 1px solid black;
 }
 /* BASIC STYLES */
 body {
