@@ -50,22 +50,58 @@ function main(){
         return gameScreen;
     }
     
+
+    
+
     function removeGameScreen () {
-        game.removeGameOverScreen();
+        game.removeGameScreen();
     }
+    
+    function createGameOverScreen () {
+        gameOverScreen = buildDom(`
+        <main>
+            <h1>Game Over</h1>
+            <p>Yout score : <span></span></p>
+            <button>Restart</button>
+        </main>`);
+
+        var button = gameOverScreen.querySelector("button");
+        button.addEventListener("click", startGame);
+
+        // var span =gameOverScreen.querySelector("span");
+        // span.innerHTML = score;
+
+        document.body.appendChild(gameOverScreen);
+    }
+
+    function removeGameOverScreen () {
+        if (gameOverScreen !== undefined) {
+    gameOverScreen.remove();
+    }
+}
+    
     function startGame () {
         removeSplashScreen();
+        removeGameOverScreen();
 
         game = new Game();
         game.gameScreen = buildGameScreen();
 
         game.start();
-    }
-    
-    function buildGameOverScreen () {}
 
-    function removeGameOverScreen () {}
-    
+        Game.prototype.passGameOverCallBack = function (){
+            gameOver (game.score);
+            console.log("gameover callback");
+        };
+    }
+
+
+    function gameOver(score){
+        
+        removeGameScreen();
+        createGameOverScreen();
+    }
+
     buildSplashScreen();
 
 }

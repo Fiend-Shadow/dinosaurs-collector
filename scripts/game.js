@@ -50,11 +50,16 @@ Game.prototype.start = function () {
 Game.prototype.startLoop = function () {
     var loop = function (){
         if (Math.random()>0.99){
-            var randomY = this.canvas.height * Math.random();
+            var randomY = (this.canvas.height-40) * Math.random();
             var newDinosaurs = new Dinosaurs (this.canvas, randomY);
             this.dinosaurs.push(newDinosaurs);
         }
+        if (Math.random()>0.99){
+            Math.random();
+            var newBrick = new Bricks(this.canvas);
+            this.brick.push(newBrick);
         
+        }
         this.collisions();
 
 
@@ -67,12 +72,20 @@ Game.prototype.startLoop = function () {
             return dinosaur.insideScreen();
         });
 
+        this.brick = this.brick.filter (function (br){
+            br.updatePostion();
+            return br.insideScreen();
+        });
+
         this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
 
         this.player1.draw();
 
         this.dinosaurs.forEach(function(dinos){
             dinos.draw();
+        });
+        this.brick.forEach(function(br){
+            br.draw();
         });
 
 
@@ -93,6 +106,7 @@ Game.prototype.collisions = function () {
         if (this.player1.didCollideDinosaurs(element)){
         
         this.score ++;
+         
         }
         // else if (!this.player1.didCollideDinosaurs(element)){
         //   this.score --;
@@ -100,15 +114,30 @@ Game.prototype.collisions = function () {
         }.bind(this));
         console.log(this.score);
 
-
+        this.brick.forEach(function(element){
+            if (this.player1.didCollideBricks(element)){
+            
+            this.gameOver();
+        }
+    }.bind(this));
 }
 
 Game.prototype.updateGameStats = function () {}
 
-Game.prototype.passGameOverCallBack = function (callback) {}
-
-Game.prototype.setGameOver= function () {
-    this.gameIsOver = true;
+Game.prototype.passGameOverCallBack = function () {
+    this.onGameOverCallBack = this.gameOver;
 }
 
-Game.prototype.removeGameScreen = function () {}
+Game.prototype.setGameOver= function () {
+    
+}
+
+Game.prototype.gameOver = function (){
+    this.gameIsOver = true;
+    this.passGameOverCallBack();
+
+};
+
+Game.prototype.removeGameScreen = function () {
+    this.gameScreen.remove();
+}

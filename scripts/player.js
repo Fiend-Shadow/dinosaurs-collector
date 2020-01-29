@@ -26,7 +26,7 @@ Player.prototype.didCollideDinosaurs = function (dinosaurs) {
     var crossLeft = dinosaurLeft <= playerRight && dinosaurLeft >= playerLeft;
     var crossRight = dinosaurRight >= playerLeft && dinosaurRight <= playerRight;
     var crossBottom = dinosaurBottom >= playerTop && dinosaurBottom <= playerBottom;
-    var crossTop = dinosaurTop >= playerBottom && dinosaurTop >= playerTop;
+    var crossTop = dinosaurTop <= playerBottom && dinosaurTop >= playerTop;
 
     if ((crossLeft || crossRight) && (crossTop || crossBottom)){
         return true;
@@ -34,7 +34,27 @@ Player.prototype.didCollideDinosaurs = function (dinosaurs) {
     return false;
 };
 
-Player.prototype.didCollideBricks = function (brick) {}
+Player.prototype.didCollideBricks = function (brick) {
+    var playerLeft = this.x;
+    var playerRight = this.x + this.size;
+    var playerTop = this.y;
+    var playerBottom = this.y + this.size;
+
+    var brickLeft =  brick.x;
+    var brickRight =  brick.x +  brick.size;
+    var brickTop =  brick.y;
+    var brickBottom =  brick.y +  brick.size;
+
+    var crossLeft = brickLeft <= playerRight && brickLeft >= playerLeft;
+    var crossRight = brickRight >= playerLeft && brickRight <= playerRight;
+    var crossBottom = brickBottom >= playerTop && brickBottom <= playerBottom;
+    var crossTop = brickTop <= playerBottom && brickTop >= playerTop;
+
+    if ((crossLeft || crossRight) && (crossTop || crossBottom)){
+        return true;
+    }
+    return false;
+}
 
 
 

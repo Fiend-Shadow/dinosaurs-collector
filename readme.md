@@ -1,6 +1,6 @@
 ### `Description:`
 
-Dinosaurs collector game , where the player is collecting the dinosaurs to gain 1 point, and if didn’t collect player will lose a point and the player has to run away from bricks, the game continue based on players score. the game will be ended when the player score gonna be less than 0 or when the player hits one of the bricks.
+Dinosaurs collector game , where the player is collecting the dinosaurs to gain 1 point, and if didn’t collect player will lose a point ,the player has to run away from bricks, the game continue based on players score. the game will be ended when the player score gonna be less than 0 or when the player hits one of the bricks.
 
 ### `MVP ( DOM - CANVAS ):`
 

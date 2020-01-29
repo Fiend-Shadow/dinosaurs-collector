@@ -2,7 +2,7 @@
 
 function Bricks(canvas){
     this.canvas = canvas;
-    this.ctx = canvas.getcContext("2d");
+    this.ctx = canvas.getContext("2d");
     this.size = 30;
     this.x = this.canvas.width + this.size;
     this.y = this.canvas.height - 50;
