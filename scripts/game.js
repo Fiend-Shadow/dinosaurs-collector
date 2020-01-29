@@ -109,6 +109,8 @@ Game.prototype.collisions = function () {
         if (this.player1.didCollideDinosaurs(element)){
         
         this.score ++;
+        
+
          this.scoreElement.innerHTML = this.score;
         element.x = 0 - element.size;
         }
@@ -117,6 +119,7 @@ Game.prototype.collisions = function () {
         // }
         }.bind(this));
         console.log(this.score);
+        
 
         this.brick.forEach(function(element){
             if (this.player1.didCollideBricks(element)){

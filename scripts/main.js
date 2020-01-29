@@ -96,7 +96,7 @@ function main(){
         </ul>  
       </nav>  
         <div class="google">
-        <a href="#" id="google_logo"><h1>Your score is <span calss="sco"></span></h1></a>
+        <a href="#" id="google_logo"><h1>Your score is : <span class="sco">${game.score}</span></h1></a>
       </div>
       <div class="form">  
         <form>
