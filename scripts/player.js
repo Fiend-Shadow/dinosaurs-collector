@@ -71,7 +71,7 @@ Player.prototype.draw = function () {
     //     );
         
     this.imgPlayer = new Image();
-    this.imgPlayer.src = "/images/google-logo.png";
+    this.imgPlayer.src = "./images/google-logo.png";
     this.ctx.drawImage(this.imgPlayer,this.x,this.y,this.size,this.size);
     }
     

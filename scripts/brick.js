@@ -3,9 +3,9 @@
 function Bricks(canvas){
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
-    this.size = 30;
+    this.size = 50;
     this.x = this.canvas.width + this.size;
-    this.y = this.canvas.height - 50;
+    this.y = this.canvas.height - 75;
     this.speed = 5;
     this.imgBrick;
 }
@@ -19,7 +19,7 @@ Bricks.prototype.draw = function () {
     //     this.size,
     // );
     this.imgBrick = new Image();
-    this.imgBrick.src = "/images/four-brown-bricks-png-clip-art.png";
+    this.imgBrick.src = "./images/3d-model-snow-pine_D-removebg-preview.png";
     this.ctx.drawImage(this.imgBrick,this.x,this.y,this.size,this.size);
 }
 

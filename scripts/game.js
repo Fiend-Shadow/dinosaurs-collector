@@ -9,11 +9,14 @@ function Game(){
     this.gameIsOver=false;
     this.gameScreen=null;
     this.score =0;
+    this.backImg = new Image();
+    this.backImg.src = "./images/62999356-seamless-game-background-flat-style-2d-game-application.jpg"
 }
 Game.prototype.start = function () {
         this.canvasContainer = document.querySelector(".canvas-container");
         this.canvas = this.gameScreen.querySelector("canvas");
         this.ctx = this.canvas.getContext("2d");
+        
         
         
 
@@ -51,7 +54,7 @@ Game.prototype.startLoop = function () {
     var loop = function (){
         if (Math.random()>0.99){
             
-            var randomY = ((this.canvas.height-150) * Math.random())+100;
+            var randomY = ((this.canvas.height-180) * Math.random())+100;
             var newDinosaurs = new Dinosaurs (this.canvas, randomY);
             this.dinosaurs.push(newDinosaurs);
             
@@ -80,6 +83,8 @@ Game.prototype.startLoop = function () {
         });
 
         this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+
+        this.ctx.drawImage(this.backImg, 0, 0, this.canvas.width, this.canvas.height);
 
         this.player1.draw();
 

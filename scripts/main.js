@@ -17,13 +17,13 @@ function main(){
         splashScreen = buildDom(`
         <nav>
         <ul id="nav_bar">
-          <li class="nav-links" id="gmail"><a href="#">Gmail</a></li>
+          <li class="nav-links" id="gmail"><a href="#">Dinosaur Mail</a></li>
           <li class="nav-links"><a href="#">Images</a></li>
           <li id="sign_in"><a href="#">Sign In</a></li>
         </ul>  
       </nav>  
         <div class="google">
-        <a href="#" id="google_logo"><img src="./images/1280px-Google_2015_logo.svg.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
+        <a href="#" id="google_logo"><img src="./images/output-onlinestringtools.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
       </div>
       <div class="form">  
         <form>
@@ -33,7 +33,7 @@ function main(){
       </div>  
       <div class= "buttons">  
       <button type="button" id = "google">Start!</button>
-      <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky">
+      <input type="submit" value="Dinosaur Collection" id="im_feeling_lucky">
     </div>
     <footer>
         <ul class="footer-left">
@@ -90,13 +90,13 @@ function main(){
         gameOverScreen = buildDom(`
         <nav>
         <ul id="nav_bar">
-          <li class="nav-links" id="gmail"><a href="#">Gmail</a></li>
+          <li class="nav-links" id="gmail"><a href="#">Dinosaur Mail</a></li>
           <li class="nav-links"><a href="#">Images</a></li>
           <li id="sign_in"><a href="#">Sign In</a></li>
         </ul>  
       </nav>  
         <div class="google">
-        <a href="#" id="google_logo"><h1>Your score is : <span class="sco">${game.score}</span></h1></a>
+        <a href="#" id="google_logo"><div><img src="./images/output-onlinestringtools (1).png"/><span calss="sco">${game.score}</span></div></a>
       </div>
       <div class="form">  
         <form>
@@ -106,7 +106,7 @@ function main(){
       </div>  
       <div class= "buttons">  
       <button type="button" id = "google">Restar !? </button>
-      <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky">
+      <input type="submit" value="Dinosaur Collection" id="im_feeling_lucky">
     </div>
     <footer>
         <ul class="footer-left">
@@ -121,6 +121,8 @@ function main(){
         </ul>       
     </footer> 
         `);
+
+        
 
         var button = gameOverScreen.querySelector("button");
         button.addEventListener("click", startGame);

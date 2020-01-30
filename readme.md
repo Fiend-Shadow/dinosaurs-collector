@@ -14,6 +14,7 @@ Bonus ( Based on score limits ) .
 
 ### `Data Structure:`
 
+
 ### `Task:`
 - main-buildDom
 - main- buildSplashScreen
@@ -51,9 +52,10 @@ https://trello.com/b/XqCztVoe/untitled-board
 
 Git
 ```
-
+https://fiend-shadow.github.io/dinosaurs-collector/
 ```
 
 Slides
 ```
+https://prezi.com/view/bPfzoI0on0104WGvmx7q/
 ```

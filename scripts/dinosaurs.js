@@ -3,7 +3,7 @@
 function Dinosaurs(canvas , yTop){
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
-    this.size = 30;
+    this.size = 50;
     this.x = canvas.width +this.size;
     this.y = yTop;
     
@@ -20,7 +20,7 @@ Dinosaurs.prototype.draw = function () {
     //     this.size,
     // );
     this.imgDino = new Image();
-    this.imgDino.src = "/images/tyrannosaurus-t-shirt-dino-t-rex-runner-2-lonely-t-rex-run-2-google-chrome-8-bit.jpg"
+    this.imgDino.src = "./images/6199368_0-removebg-preview.png"
     this.ctx.drawImage(this.imgDino,this.x,this.y,this.size,this.size);
 }
 

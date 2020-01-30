@@ -2,6 +2,11 @@
     height: 275px;
     border : 1px solid black;
 }
+span .sco{
+  color: blue;
+  text-shadow: 2px 2px blue;
+  font-size: 70px;
+}
 /* BASIC STYLES */
 body {
   margin: 0;
@@ -64,9 +69,11 @@ li.nav-links a:hover {
   clear: both;
   padding-top: 112px;
   padding-bottom: 20px;
+  
 }
 .google img{
-    width :30%;
+    width :40%;
+    height: auto;
 }
 .form {
   text-align: center;
