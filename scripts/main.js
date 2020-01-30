@@ -71,9 +71,11 @@ function main(){
                 <span class="value"></span>
               </div>
             </header>  
+            
             <div class="canvas-container">
               <canvas></canvas>
             </div>
+            
         </main>`);
         document.body.appendChild(gameScreen);
         return gameScreen;
@@ -96,7 +98,7 @@ function main(){
         </ul>  
       </nav>  
         <div class="google">
-        <a href="#" id="google_logo"><div><img src="./images/output-onlinestringtools (1).png"/><span calss="sco">${game.score}</span></div></a>
+        <a href="#" id="google_logo"><div><img src="./images/output-onlinestringtools (1).png"/><span class="sco">${game.score}</span></div></a>
       </div>
       <div class="form">  
         <form>

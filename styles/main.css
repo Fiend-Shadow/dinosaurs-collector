@@ -1,14 +1,43 @@
 .canvas-container{
     height: 275px;
     border : 1px solid black;
+    background: url("../images/62999356-seamless-game-background-flat-style-2d-game-application.jpg") ;
+    background-size: contain;
+    opacity: 0.7;
+    
 }
-span .sco{
-  color: blue;
-  text-shadow: 2px 2px blue;
-  font-size: 70px;
+
+/* .game.container{
+  height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+
+
+body .game{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url("../images/16362961-snow-background-with-decorative-snowflake.jpg");
+  
 }
+
+
+
+span.sco{
+  color: rgb(80, 80, 110);
+  text-shadow: 2px 2px rgb(100, 100, 216);
+  font-size: 60px;
+  
+}
+
 /* BASIC STYLES */
 body {
+  height:100vh;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
