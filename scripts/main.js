@@ -107,7 +107,7 @@ function main(){
         </form>
       </div>  
       <div class= "buttons">  
-      <button type="button" id = "google">Restar !? </button>
+      <button type="button" id = "google">Restart !? </button>
       <input type="submit" value="Dinosaur Collection" id="im_feeling_lucky">
     </div>
     <footer>
