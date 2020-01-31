@@ -17,12 +17,21 @@ body .game{
 
 
 span.sco{
-  color: rgb(80, 80, 110);
-  text-shadow: 2px 2px rgb(100, 100, 216);
-  font-size: 60px;
+  
+  /* font-size: 60px; */
+  font-family: 'Permanent Marker', cursive;
   
 }
 
+.pablo{
+  color: rgb(80, 80, 110);
+  text-shadow: 2px 2px rgb(100, 100, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: 'Permanent Marker', cursive;
+}
 /* BASIC STYLES */
 body {
   height:100vh;

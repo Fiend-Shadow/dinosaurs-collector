@@ -135,7 +135,7 @@ Game.prototype.collisions = function () {
     }.bind(this));
 }
 
-Game.prototype.updateGameStats = function () {}
+
 
 Game.prototype.passGameOverCallBack = function () {
     this.onGameOverCallBack = this.gameOver;

@@ -18,27 +18,29 @@ Bonus ( Based on score limits ) .
 ### `Task:`
 - main-buildDom
 - main- buildSplashScreen
-- main- buildGameScreen
-- main- eventListener
-- main- buildGameOverScreen
 - main- removeSplashScreen
-- Game- buildCanvas
-- Game- clearCanvas
-- Game- updateCanvas
-- Game- drawCanvas
-- Game- setGameOver
-- Game- collision
-- Game- addEventListener
+- main- buildGameScreen
+- main- removeGameScreen
+- main- createGameOverScreen
+- main- removeGameOverScreen
+- main- startGame
+- main-gameOver
+- main- eventListener
+- Game- start
 - Game- startLoop
-- player- jump
-- player- handleScreenCollision
+- Game- collision
+- Game- passGameOverCallBack
+- Game- setGameOver
+- Game- gameOver
+- Game- removeGameScreen
 - player- didCollideDinosaurs
 - player- didCollideBricks
 - player- draw
-- player- score
-- dinosaurs- insideScreen
+- player- jump
+- player- move
 - dinosaurs- draw
 - dinosaurs- updatePosition
+- dinosaurs- insideScreen
 - bricks- draw
 - bricks- updatePostion
 - bricks- insideScreen
