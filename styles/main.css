@@ -12,10 +12,12 @@ body .game{
   flex-direction: column;
   justify-content: center;
   background: url("../images/16362961-snow-background-with-decorative-snowflake.jpg");
-  
+  background-size: cover;
 }
 
-
+html{
+  height: 100vh;
+}
 span.sco{
   
   /* font-size: 60px; */
