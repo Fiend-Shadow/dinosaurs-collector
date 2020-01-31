@@ -1,21 +1,10 @@
 .canvas-container{
     height: 275px;
-    border : 1px solid black;
     background: url("../images/62999356-seamless-game-background-flat-style-2d-game-application.jpg") ;
     background-size: contain;
     opacity: 0.7;
     
 }
-
-/* .game.container{
-  height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-} */
-
-
 
 body .game{
   height: 100vh;
@@ -25,7 +14,6 @@ body .game{
   background: url("../images/16362961-snow-background-with-decorative-snowflake.jpg");
   
 }
-
 
 
 span.sco{
@@ -96,7 +84,7 @@ li.nav-links a:hover {
   display: block;
   margin: 0 auto;
   clear: both;
-  padding-top: 112px;
+  padding-top: 250px;
   padding-bottom: 20px;
   
 }

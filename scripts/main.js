@@ -98,7 +98,7 @@ function main(){
         </ul>  
       </nav>  
         <div class="google">
-        <a href="#" id="google_logo"><div><img src="./images/output-onlinestringtools (1).png"/><span class="sco">${game.score}</span></div></a>
+        <a href="#" id="google_logo"><div><img src="./images/output-onlinestringtools (1).png"/><span class="sco"> ${game.score}</span></div></a>
       </div>
       <div class="form">  
         <form>
