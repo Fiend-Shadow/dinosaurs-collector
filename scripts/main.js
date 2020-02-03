@@ -1,15 +1,15 @@
 "use strict";
 
 function buildDom(htmlString) {
-  var div = document.createElement("div");
+  let div = document.createElement("div");
   div.innerHTML = htmlString;
   return div;
 }
 
-function main() {
-  var game;
-  var splashScreen;
-  var gameOverScreen;
+window.addEventListener("load", ()=> {
+   let game;
+   let splashScreen;
+   let gameOverScreen;
 
   function buildSplashScreen() {
     splashScreen = buildDom(`
@@ -50,7 +50,7 @@ function main() {
 
     document.body.appendChild(splashScreen);
 
-    var startButton = splashScreen.querySelector(".buttons #google");
+    let startButton = splashScreen.querySelector(".buttons #google");
 
     startButton.addEventListener("click", startGame);
   }
@@ -60,7 +60,7 @@ function main() {
   }
 
   function buildGameScreen() {
-    var gameScreen = buildDom(`
+    let gameScreen = buildDom(`
         <main class="game container">
             <header>
               <div class="score">
@@ -123,7 +123,7 @@ function main() {
     </footer> 
         `);
 
-    var button = gameOverScreen.querySelector("button");
+    let button = gameOverScreen.querySelector("button");
     button.addEventListener("click", startGame);
 
     // var span =gameOverScreen.querySelector("span");
@@ -160,4 +160,5 @@ function main() {
 
   buildSplashScreen();
 }
-window.addEventListener("load", main);
+
+)

@@ -1,6 +1,7 @@
 'use strict'
 
-function Dinosaurs(canvas , yTop){
+class Dinosaurs{
+    constructor (canvas , yTop){
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
     this.size = 50;
@@ -11,7 +12,7 @@ function Dinosaurs(canvas , yTop){
     this.imgDino;
 }
 
-Dinosaurs.prototype.draw = function () {
+draw() {
     // this.ctx.fillStyle = "grey";
     // this.ctx.fillRect(
     //     this.x,
@@ -24,10 +25,11 @@ Dinosaurs.prototype.draw = function () {
     this.ctx.drawImage(this.imgDino,this.x,this.y,this.size,this.size);
 }
 
-Dinosaurs.prototype.updatePostion = function () {
+updatePostion () {
     this.x = this.x - this.speed;
 }
 
-Dinosaurs.prototype.insideScreen = function () {
+insideScreen () {
     return this.x + this.size / 2 >0;
+}
 }

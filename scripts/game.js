@@ -1,6 +1,7 @@
 'use strict'
 
-function Game(){
+class Game{
+    constructor (){
     this.canvas = null;
     this.ctx = null;
     this.dinosaurs = [];
@@ -12,7 +13,7 @@ function Game(){
     this.backImg = new Image();
     this.backImg.src = "./images/62999356-seamless-game-background-flat-style-2d-game-application.jpg"
 }
-Game.prototype.start = function () {
+  start  () {
         this.canvasContainer = document.querySelector(".canvas-container");
         this.canvas = this.gameScreen.querySelector("canvas");
         this.ctx = this.canvas.getContext("2d");
@@ -34,7 +35,7 @@ Game.prototype.start = function () {
         this.player1 = new Player(this.canvas);
 
 
-        this.handleKeyDown = function (event) {
+        this.handleKeyDown = event => {
 
             if (event.key === "ArrowUp"){
                 this.player1.move();
@@ -50,18 +51,18 @@ Game.prototype.start = function () {
 
 }
 
-Game.prototype.startLoop = function () {
-    var loop = function (){
+  startLoop () {
+    let loop =  ()=>{
         if (Math.random()>0.99){
             
-            var randomY = ((this.canvas.height-180) * Math.random())+100;
-            var newDinosaurs = new Dinosaurs (this.canvas, randomY);
+            let randomY = ((this.canvas.height-180) * Math.random())+100;
+            let newDinosaurs = new Dinosaurs (this.canvas, randomY);
             this.dinosaurs.push(newDinosaurs);
             
         }
         if (Math.random()>0.99){
             Math.random();
-            var newBrick = new Bricks(this.canvas);
+            let newBrick = new Bricks(this.canvas);
             this.brick.push(newBrick);
         
         }
@@ -72,12 +73,12 @@ Game.prototype.startLoop = function () {
         this.player1.jump();
 
 
-        this.dinosaurs = this.dinosaurs.filter (function (dinosaur){
+        this.dinosaurs = this.dinosaurs.filter ( (dinosaur) => {
             dinosaur.updatePostion();
             return dinosaur.insideScreen();
         });
 
-        this.brick = this.brick.filter (function (br){
+        this.brick = this.brick.filter (br=>{
             br.updatePostion();
             return br.insideScreen();
         });
@@ -88,10 +89,10 @@ Game.prototype.startLoop = function () {
 
         this.player1.draw();
 
-        this.dinosaurs.forEach(function(dinos){
+        this.dinosaurs.forEach((dinos) => {
             dinos.draw();
         });
-        this.brick.forEach(function(br){
+        this.brick.forEach((br)=>{
             br.draw();
         });
 
@@ -101,16 +102,16 @@ Game.prototype.startLoop = function () {
         if (!this.gameIsOver){
             window.requestAnimationFrame(loop);
         }
-    }.bind(this);
+    };
 
 
     window.requestAnimationFrame(loop);
 }
 
-Game.prototype.collisions = function () {
+  collisions () {
 
     
-    this.dinosaurs.forEach(function(element){
+    this.dinosaurs.forEach((element)=>{
         if (this.player1.didCollideDinosaurs(element)){
         
         this.score ++;
@@ -122,35 +123,36 @@ Game.prototype.collisions = function () {
         // else if (!this.player1.didCollideDinosaurs(element)){
         //   this.score --;
         // }
-        }.bind(this));
+        });
         console.log(this.score);
         
 
-        this.brick.forEach(function(element){
+        this.brick.forEach((element) => {
             if (this.player1.didCollideBricks(element)){
             
                 
             this.gameOver();
         }
-    }.bind(this));
+    });
 }
 
 
 
-Game.prototype.passGameOverCallBack = function () {
+ passGameOverCallBack () {
     this.onGameOverCallBack = this.gameOver;
 }
 
-Game.prototype.setGameOver= function () {
+ setGameOver () {
     
 }
 
-Game.prototype.gameOver = function (){
+ gameOver  (){
     this.gameIsOver = true;
     this.passGameOverCallBack();
 
 };
 
-Game.prototype.removeGameScreen = function () {
+ removeGameScreen () {
     this.gameScreen.remove();
+}
 }

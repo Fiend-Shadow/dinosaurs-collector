@@ -1,6 +1,7 @@
 'use strict'
 
-function Player(canvas){
+class Player{
+    constructor (canvas){
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
   this.score = 0;
@@ -13,21 +14,21 @@ function Player(canvas){
 
 }
 
-Player.prototype.didCollideDinosaurs = function (dinosaurs) {
-    var playerLeft = this.x;
-    var playerRight = this.x + this.size;
-    var playerTop = this.y;
-    var playerBottom = this.y + this.size;
+ didCollideDinosaurs (dinosaurs) {
+    let playerLeft = this.x;
+    let playerRight = this.x + this.size;
+    let playerTop = this.y;
+    let playerBottom = this.y + this.size;
 
-    var dinosaurLeft = dinosaurs.x;
-    var dinosaurRight = dinosaurs.x + dinosaurs.size;
-    var dinosaurTop = dinosaurs.y;
-    var dinosaurBottom = dinosaurs.y + dinosaurs.size;
+    let dinosaurLeft = dinosaurs.x;
+    let dinosaurRight = dinosaurs.x + dinosaurs.size;
+    let dinosaurTop = dinosaurs.y;
+    let dinosaurBottom = dinosaurs.y + dinosaurs.size;
 
-    var crossLeft = dinosaurLeft <= playerRight && dinosaurLeft >= playerLeft;
-    var crossRight = dinosaurRight >= playerLeft && dinosaurRight <= playerRight;
-    var crossBottom = dinosaurBottom >= playerTop && dinosaurBottom <= playerBottom;
-    var crossTop = dinosaurTop <= playerBottom && dinosaurTop >= playerTop;
+    let crossLeft = dinosaurLeft <= playerRight && dinosaurLeft >= playerLeft;
+    let crossRight = dinosaurRight >= playerLeft && dinosaurRight <= playerRight;
+    let crossBottom = dinosaurBottom >= playerTop && dinosaurBottom <= playerBottom;
+    let crossTop = dinosaurTop <= playerBottom && dinosaurTop >= playerTop;
 
     if ((crossLeft || crossRight) && (crossTop || crossBottom)){
         return true;
@@ -35,21 +36,21 @@ Player.prototype.didCollideDinosaurs = function (dinosaurs) {
     return false;
 };
 
-Player.prototype.didCollideBricks = function (brick) {
-    var playerLeft = this.x;
-    var playerRight = this.x + this.size;
-    var playerTop = this.y;
-    var playerBottom = this.y + this.size;
+didCollideBricks  (brick) {
+    let playerLeft = this.x;
+    let playerRight = this.x + this.size;
+    let playerTop = this.y;
+    let playerBottom = this.y + this.size;
 
-    var brickLeft =  brick.x;
-    var brickRight =  brick.x +  brick.size;
-    var brickTop =  brick.y;
-    var brickBottom =  brick.y +  brick.size;
+    let brickLeft =  brick.x;
+    let brickRight =  brick.x +  brick.size;
+    let brickTop =  brick.y;
+    let brickBottom =  brick.y +  brick.size;
 
-    var crossLeft = brickLeft <= playerRight && brickLeft >= playerLeft;
-    var crossRight = brickRight >= playerLeft && brickRight <= playerRight;
-    var crossBottom = brickBottom >= playerTop && brickBottom <= playerBottom;
-    var crossTop = brickTop <= playerBottom && brickTop >= playerTop;
+    let crossLeft = brickLeft <= playerRight && brickLeft >= playerLeft;
+    let crossRight = brickRight >= playerLeft && brickRight <= playerRight;
+    let crossBottom = brickBottom >= playerTop && brickBottom <= playerBottom;
+    let crossTop = brickTop <= playerBottom && brickTop >= playerTop;
 
     if ((crossLeft || crossRight) && (crossTop || crossBottom)){
         return true;
@@ -60,7 +61,7 @@ Player.prototype.didCollideBricks = function (brick) {
 
 
 
-Player.prototype.draw = function () {
+  draw () {
     // this.ctx.fillStyle = "red";
     
     // this.ctx.fillRect(
@@ -75,7 +76,7 @@ Player.prototype.draw = function () {
     this.ctx.drawImage(this.imgPlayer,this.x,this.y,this.size,this.size);
     }
     
-    Player.prototype.jump = function (){
+    jump (){
         this.y = this.y +this.vy *this.speed;
         
             
@@ -89,6 +90,7 @@ Player.prototype.draw = function () {
         
     }
     
-    Player.prototype.move = function () {
+    move () {
         this.vy = -5 ;
+}
 }
